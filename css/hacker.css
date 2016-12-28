@@ -968,3 +968,9 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .matrixbg{
     background-image: url(../img/mtrxbg.gif);
 }
+
+a.button.checkAnswer, a.button.startQuiz {
+   // background-color: grey;
+    padding: 5px;
+    margin-top: 0%;
+}
