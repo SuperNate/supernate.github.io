@@ -78,6 +78,8 @@
             <p>
                 <a class="btn btn-lg btn-primary" href="//github.com/OxBEEF/" role="button">View on Github »</a>
                 <a class="btn btn-primary" href="//github.com/OxBEEF/" id="stars"></a>
+				<br><br>
+				<a class="btn btn-primary" href="" id="ip2"></a>
             </p>
         </div>
 	
@@ -93,8 +95,12 @@
         <!-- Tables -->
         <div class="row tall-row">
             <div class="col-lg-12">
+				<h1>Your Local IP Address</h1>
+				<span id="ip"></span>
                 <h1>Top 10 Alerts</h1>
                 <hr>
+
+				<hr>
             </div>
         </div>
         <div class="row">
@@ -209,7 +215,7 @@
         <!-- Forms -->
         <div class="row tall-row">
             <div class="col-lg-12">
-                <h1>Contact Form & F.A.Q</h1>
+                <h1>Exploit Submission Form & F.A.Q</h1>
                 <hr>
             </div>
         </div>
@@ -226,58 +232,56 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                                <label for="inputPassword" class="col-lg-2 control-label">Handle</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" id="inputPassword" placeholder="Password" type="password">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox"> Checkbox
+                                            <input type="checkbox"> Proof Of Concept (POC)
+                                        </label>
+										 <label>
+                                            <input type="checkbox"> Working Exploit
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+                                <label for="textArea" class="col-lg-2 control-label">paste code here</label>
                                 <div class="col-lg-10">
                                     <textarea class="form-control" rows="3" id="textArea"></textarea>
-                                    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-                                </div>
+                                    </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">Radios</label>
+                                <label class="col-lg-2 control-label">Code Type</label>
                                 <div class="col-lg-10">
                                     <div class="radio">
                                         <label>
                                             <input name="optionsRadios" id="optionsRadios1" value="option1" checked="" type="radio">
-                                            Option one is this
+                                            Shell Code
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input name="optionsRadios" id="optionsRadios2" value="option2" type="radio">
-                                            Option two can be something else
+                                            Binary or PE
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="select" class="col-lg-2 control-label">Selects</label>
+                                <label for="select" class="col-lg-2 control-label">Language</label>
                                 <div class="col-lg-10">
                                     <select class="form-control" id="select">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                        <option>php</option>
+                                        <option>elf</option>
+                                        <option>exe</option>
+                                        <option>bin</option>
+                                        <option>js</option>
+										<option>java</option>
+										<option>python</option>
+										<option>C</option>
                                     </select>
-                                    <br>
-                                    <select multiple="" class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                   
                                 </div>
                             </div>
                             <div class="form-group">
@@ -293,34 +297,40 @@
             <div class="col-md-4">
                 <h3>F.A.Q</h3>
                 <ul class="nav nav-tabs">
-                    <li class="active"><a aria-expanded="true" href="#home" data-toggle="tab">Home</a></li>
-                    <li class=""><a aria-expanded="false" href="#profile" data-toggle="tab">Profile</a></li>
+                    <li class="active"><a aria-expanded="true" href="#home" data-toggle="tab">Is This Site Safe ?</a></li>
+                    <li class=""><a aria-expanded="false" href="#profile" data-toggle="tab">How It Works</a></li>
                     <li class="dropdown">
-                        <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span>
+                        <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#">More <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#dropdown1" data-toggle="tab">Bacon</a></li>
+                            <li><a href="#dropdown1" data-toggle="tab">What Is Bitcoin</a></li>
                             <li class="divider"></li>
-                            <li><a href="#dropdown2" data-toggle="tab">Zen of Python</a></li>
+                            <li><a href="#dropdown2" data-toggle="tab">Zen philosophy</a></li>
+							<li class="divider"></li>
+                            <li><a href="#dropdown3" data-toggle="tab">Captured Cookies</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="home">
-                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                    </div>
+                        </div>
                     <div class="tab-pane fade" id="profile">
                         <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
                     </div>
                     <div class="tab-pane fade" id="dropdown1">
-                        <p>Bacon ipsum dolor amet kielbasa bacon swine boudin brisket hamburger bresaola chicken filet mignon fatback leberkas beef ribs salami. Leberkas rump ball tip landjaeger bresaola salami drumstick sausage pork loin picanha pork chop. Sausage short loin swine pork filet mignon pork belly landjaeger cupim, frankfurter corned beef venison drumstick. Filet mignon rump picanha drumstick shank ball tip doner frankfurter shoulder. Meatloaf tri-tip porchetta tail, fatback boudin rump strip steak doner cow jerky pork loin turkey cupim. Cupim prosciutto sausage kevin pork loin, beef ribs chuck tail salami rump meatloaf shank. Pork belly fatback chuck, alcatra short ribs kevin landjaeger drumstick pig tongue jowl.</p>
-                    </div>
+						<p> you probably haven't heard of it or maybe you have. Bitcoin...  them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. </p>
+						<div id="coindesk-widget" data-size="mpu"></div>
+						<script type="text/javascript" src="http://widget.coindesk.com/bpiticker/coindesk-widget.min.js"></script>
+					
+					</div>
                     <div class="tab-pane fade" id="dropdown2">
                         <p>Beautiful is better than ugly. Explicit is better than implicit. Simple is better than complex. Complex is better than complicated. Flat is better than nested. Sparse is better than dense. Readability counts. Special cases aren't special enough to break the rules. Although practicality beats purity. Errors should never pass silently. Unless explicitly silenced. In the face of ambiguity, refuse the temptation to guess. There should be one-- and preferably only one --obvious way to do it. Although that way may not be obvious at first unless you're Dutch. Now is better than never. Although never is often better than *right* now. If the implementation is hard to explain, it's a bad idea. If the implementation is easy to explain, it may be a good idea. Namespaces are one honking great idea -- let's do more of those!</p>
                     </div>
+					<div class="tab-pane fade" id="dropdown3">
+                        <p>the following session cookies were exposed:</p>
+                    </div>
                 </div>
-				<div id="coindesk-widget"></div>
-				<script type="text/javascript" src="http://widget.coindesk.com/bpiticker/coindesk-widget.min.js"></script>
+				
             </div>
         </div>
 
@@ -330,6 +340,8 @@
 
         <!-- List Groups -->
         <div class="row tall-row">
+	
+
             <div class="col-lg-12">
                 <h1>List Of Known Groups</h1>
                 <hr>
@@ -338,20 +350,21 @@
         <div class="row">
             <div class="col-lg-4">
                 <ul class="list-group">
-                    <a href="#"><li class="list-group-item">
+                    <a href="#dropdown4" data-toggle="tab"><li class="list-group-item">
                         <span class="badge">14</span>
                         N.A.
                     </li></a>
-                   <a href="#"> <li class="list-group-item">
+                   <a href="#dropdown5" data-toggle="tab"> <li class="list-group-item">
                         <span class="badge">2</span>
                         EUROPE
                     </li></a>
-                    <a href="#"><li class="list-group-item">
+                    <a href="#dropdown6" data-toggle="tab"><li class="list-group-item">
                         <span class="badge">1</span>
-                        AFRICA
+                        OTHER
                     </li></a>
                 </ul>
             </div>
+		<div class="tab-pane fade" id="dropdown4">
             <div class="col-lg-4">
                 <div class="list-group">
                     <a href="#" class="list-group-item active">Cras justo odio</a>
@@ -371,8 +384,58 @@
                     </a>
                 </div>
             </div>
+			
+		</div>
         </div>
 
+		
+		<div class="tab-pane fade" id="dropdown5">
+            <div class="col-lg-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Russian</a>
+                    <a href="#" class="list-group-item">English</a>
+                    <a href="#" class="list-group-item">Chinese</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+                </div>
+            </div>
+			
+		</div>
+        </div>
+		
+		<div class="tab-pane fade" id="dropdown6">
+            <div class="col-lg-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Cras justo odio</a>
+                    <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                    <a href="#" class="list-group-item">Morbi leo risus</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+                </div>
+            </div>
+			
+		</div>
+        </div>
         		
 		<!-- Buttons -->
         <div class="row tall-row">
@@ -434,7 +497,7 @@
         <!-- Dialogs -->
         <div class="row tall-row">
             <div class="col-lg-12">
-                <h1>Messages</h1>
+                <h1 class="text-center" >Messages</h1>
                 <hr>
             </div>
         </div>
@@ -457,8 +520,29 @@
                         </div>
                     </div>
                 </div>
+				
+				<div class="modal">
+                    <div class="modal-dialog1">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title1">Current DDOS Activity </h4>
+                            </div>
+                            <div class="modal-body1">
+                                <iframe width="680" height="480"  scrolling="no" frameborder="0" src="http://digitalattackmap.com/embedv1#anim=1&color=0&country=&list=0&time=&view=map"></iframe>
+</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
             </div>
         </div>
+		
+		
 
         <div class="row tall-row">
             <div class="col-md-12">
@@ -470,8 +554,33 @@
 
 
     <!-- Github stars script -->
+	<script type="application/javascript">
+  function getIP(json) {
+    document.write("My public IP address is: ", json.ip);
+  }
+  
+</script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
     <script>
+	
     $(document).ready(function(){
+	
+	
+	$.getJSON('http://ipinfo.io', function(data){
+    console.log(data);
+	var iknowyounow = data['ip'];
+	var iknowyounow1 = data['hostname'];
+	var iknowyounow2 = data['city'];
+	var iknowyounow3 = data['region'];
+	var iknowyounow4 = data['country'];
+            $("#ip2").text(" Your Public IP:" + iknowyounow  + " & Your Hostname:" + iknowyounow1 );
+			
+	//alert("Your location is: " + iknowyounow);
+		});
+			
+
+	
 	 $('#slickQuiz').slickQuiz();
 	 
         $.getJSON("https://api.github.com/repos/OxBEEF/InternetSecurity101", function(data){
