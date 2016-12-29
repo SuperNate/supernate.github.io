@@ -81,6 +81,7 @@
 				<br><br>
 				<a class="btn btn-primary" href="" id="ip2"></a>
             </p>
+			<h4>Your Local IP Address</h4><span id="ip"></span>
         </div>
 	
 	
@@ -95,9 +96,8 @@
         <!-- Tables -->
         <div class="row tall-row">
             <div class="col-lg-12">
-				<h1>Your Local IP Address</h1>
-				<span id="ip"></span>
-                <h1>Top 10 Alerts</h1>
+								
+                <h1>Top 10 Alerts </h1>
                 <hr>
 
 				<hr>
@@ -390,49 +390,13 @@
 
 		
 		<div class="tab-pane fade" id="dropdown5">
-            <div class="col-lg-4">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Russian</a>
-                    <a href="#" class="list-group-item">English</a>
-                    <a href="#" class="list-group-item">Chinese</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
-                </div>
-            </div>
+           
 			
 		</div>
         </div>
 		
 		<div class="tab-pane fade" id="dropdown6">
-            <div class="col-lg-4">
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">Cras justo odio</a>
-                    <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item">Morbi leo risus</a>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <h4 class="list-group-item-heading">List group item heading</h4>
-                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    </a>
-                </div>
-            </div>
+            
 			
 		</div>
         </div>
@@ -562,6 +526,63 @@
 </script>
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+<script>
+//do peer connect to get local nat'd ip, then do a public lookup from 
+/**
+ * Get the user IP throught the webkitRTCPeerConnection
+ * @param onNewIP {Function} listener function to expose the IP locally
+ * @return undefined
+ */
+     $(document).ready(function(){
+ 
+function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
+    //compatibility for firefox and chrome
+    var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+    var pc = new myPeerConnection({
+        iceServers: []
+    }),
+    noop = function() {},
+    localIPs = {},
+    ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g,
+    key;
+
+    function iterateIP(ip) {
+        if (!localIPs[ip]) onNewIP(ip);
+        localIPs[ip] = true;
+    }
+
+     //create a bogus data channel
+    pc.createDataChannel("");
+
+    // create offer and set local description
+    pc.createOffer(function(sdp) {
+        sdp.sdp.split('\n').forEach(function(line) {
+            if (line.indexOf('candidate') < 0) return;
+            line.match(ipRegex).forEach(iterateIP);
+        });
+        
+        pc.setLocalDescription(sdp, noop, noop);
+    }, noop); 
+
+    //listen for candidate events
+    pc.onicecandidate = function(ice) {
+        if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
+        ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
+    };
+}
+
+// Usage
+
+getUserIP(function(ip){
+	//alert("Your location is: " + ip);
+		//document.getElementById("ip").innerHTML = 'Got your IP ! : '  + ip + " | verify in http://www.whatismypublicip.com/";
+		document.getElementById("ip").innerHTML = 'You are not behind a VPN : '  +  "Your Local IP Is:" + ip + " | verify in your network connections";
+});
+
+    });
+</script>
+
+
     <script>
 	
     $(document).ready(function(){
